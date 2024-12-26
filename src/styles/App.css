@@ -1,0 +1,26 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  h2 {
+    color: #444;
+    font-size: 20px;
+  }
+  
+  div {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .MuiTable-root {
+    margin-top: 20px;
+  }
+  

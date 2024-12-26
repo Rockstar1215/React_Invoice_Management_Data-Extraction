@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import FileUpload from './components/FileUpload';
+import Invoices from './pages/Invoices';
+import Products from './pages/Products';
+import Customers from './pages/Customers';
+import { Tabs, Tab } from '@mui/material';
 
 function App() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Automated Data Extraction and Management</h1>
+      <FileUpload />
+      <Tabs value={value} onChange={handleChange}>
+        <Tab label="Invoices" />
+        <Tab label="Products" />
+        <Tab label="Customers" />
+      </Tabs>
+
+      {value === 0 && <Invoices />}
+      {value === 1 && <Products />}
+      {value === 2 && <Customers />}
     </div>
   );
 }
